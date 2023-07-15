@@ -10,24 +10,16 @@ using namespace std;
 class Solution
 {
     public:
-    //Function to delete middle element of a stack.
-    void deleteMid(stack<int>&s, int sizeOfStack)
-    {
-        // code here.. 
-        stack<int>q;
-        int p=ceil((sizeOfStack+1)/2.0);
-        int c=0;
-        while(c!=p){
-            q.push(s.top());
+    void deleteMid(stack<int>&s,int sizeOfStack){
+        if(s.size()==(sizeOfStack+1)/2){
             s.pop();
-            c++;
+            return;
         }
-        q.pop();
-        while(!q.empty()){
-            s.push(q.top());
-            q.pop();
-        }
-    }
+        int x=s.top();
+        s.pop();
+        deleteMid(s,sizeOfStack);
+        s.push(x);
+    } 
 };
 
 //{ Driver Code Starts.
