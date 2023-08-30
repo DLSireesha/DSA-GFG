@@ -88,17 +88,12 @@ Node* deleteNode(Node *head,int x)
 {
     //Your code here
     int count=1;
-    Node *temp=head;
-    if(x==1){
-        temp=temp->next;
-        head=temp;
-    }
-    while(temp && temp->next){
+    Node* cur=head;
+    if(x==1) return head->next;
+    while(count<x-1 && cur->next!=NULL){
+        cur=cur->next;
         count++;
-        if(count==x){
-            temp->next=temp->next->next;
-        }
-        temp=temp->next;
     }
+    cur->next=cur->next->next;
     return head;
 }
