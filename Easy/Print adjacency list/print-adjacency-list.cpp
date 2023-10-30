@@ -7,14 +7,13 @@ class Solution {
   public:
     // Function to return the adjacency list for each vertex.
     vector<vector<int>> printGraph(int V, vector<pair<int,int>>edges) {
-        vector<vector<int>> list(V);
-        for(auto edge:edges){
-            int u=edge.first;
-            int v=edge.second;
-            list[u].push_back(v);
-            list[v].push_back(u);
+        // Code here
+        vector<vector<int>> ans(V);
+        for(auto it:edges){
+            ans[it.first].push_back(it.second);
+            ans[it.second].push_back(it.first);
         }
-        return list;
+        return ans;
     }
 };
 
