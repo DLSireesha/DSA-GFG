@@ -17,12 +17,12 @@ class Solution
 	        }
 	    }
 	    queue<int> q;
+	    vector<int> ans;
 	    for(int i=0;i<V;i++){
 	        if(indegree[i]==0){
 	            q.push(i);
 	        }
 	    }
-	    vector<int> ans;
 	    while(!q.empty()){
 	        int node=q.front();
 	        q.pop();
