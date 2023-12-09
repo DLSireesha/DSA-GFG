@@ -11,16 +11,15 @@ class Solution
     //Function to find the smallest positive number missing from the array.
     int missingNumber(int arr[], int n) 
     { 
-        unordered_map<int,int> m;
+        // Your code here
+        int res=1;
+        sort(arr,arr+n);
         for(int i=0;i<n;i++){
-            m[arr[i]]++;}
-            for(int j=1;j<=n;j++){
-                if(m[j]==0){
-                    return j;
-                }
+            if(arr[i]==res){
+                res++;
             }
-        
-        return n+1;
+        }
+        return res;
     } 
 };
 
